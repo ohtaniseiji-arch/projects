@@ -1,5 +1,0 @@
-{
-  "diffEditor.renderSideBySide": true,
-  "diffEditor.useInlineViewWhenSpaceIsLimited": false,
-  "gitlens.views.repositories.autoRefresh": false
-}

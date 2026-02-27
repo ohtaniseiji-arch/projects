@@ -1,4 +1,8 @@
 target/
 **/target/
-projects/.vscode/
-.vscode/
+projects/.vscode/*
+!projects/.vscode/extensions.json
+!projects/.vscode/settings.json
+!projects/.vscode/launch.json
+!projects/.vscode/tasks.json
+/.vscode/

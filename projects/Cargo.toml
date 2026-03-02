@@ -1,6 +1,9 @@
-[package]
-name = "projects"
-version = "0.1.0"
-edition = "2024"
+[workspace]
+members = [
+    "ch01_hello",
+    "ch02_guessing_game",
+]
 
-[dependencies]
+default-members = ["ch02_guessing_game"]
+
+resolver = "2"

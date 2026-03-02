@@ -1,3 +1,7 @@
 {
-  "gitlens.plusFeatures.enabled": true
+  "gitlens.plusFeatures.enabled": true,
+  "gitlens.proxy": {
+    "url": "http://172.27.12.7:12080",
+    "strictSSL": false
+  }
 }

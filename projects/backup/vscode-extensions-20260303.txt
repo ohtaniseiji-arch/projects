@@ -1,0 +1,13 @@
+﻿eamodio.gitlens@17.10.2
+formulahendry.code-runner@0.12.2
+github.copilot-chat@0.37.9
+mhutchie.git-graph@1.30.0
+ms-ceintl.vscode-language-pack-ja@1.108.2026021109
+ms-vscode.hexeditor@1.11.1
+openai.chatgpt@0.4.76
+rust-lang.rust-analyzer@0.3.2803
+shd101wyy.markdown-preview-enhanced@0.8.20
+tamasfe.even-better-toml@0.21.2
+usernamehw.errorlens@3.28.0
+vadimcn.vscode-lldb@1.12.1
+yzane.markdown-pdf@1.5.0

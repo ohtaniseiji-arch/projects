@@ -1,0 +1,7 @@
+﻿  copilot/enable-gitlens-pro-extension                e057930 [origin/copilot/enable-gitlens-pro-extension] Merge branch 'main' into rollback-20260226
+* main                                                e057930 [origin/main] Merge branch 'main' into rollback-20260226
+  rollback-20260226                                   e057930 [origin/rollback-20260226] Merge branch 'main' into rollback-20260226
+  remotes/origin/HEAD                                 -> origin/main
+  remotes/origin/copilot/enable-gitlens-pro-extension e057930 Merge branch 'main' into rollback-20260226
+  remotes/origin/main                                 e057930 Merge branch 'main' into rollback-20260226
+  remotes/origin/rollback-20260226                    e057930 Merge branch 'main' into rollback-20260226

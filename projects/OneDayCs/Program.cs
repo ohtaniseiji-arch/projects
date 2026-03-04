@@ -19,24 +19,37 @@ class Program
 
         dynamic wb = app.Workbooks.Open(path);
         dynamic ws = wb.Sheets["経営情報シート"];
+
+        app.CalculateFull();
+
         dynamic range = ws.Range["N5", "DK11"];
+
+        bool found = false;
 
         foreach (dynamic cell in range.Cells)
         {
             if (Convert.ToBoolean(cell.HasFormula))
             {
-                object formula = cell.Formula;
-                object recalculated = ws.Evaluate(formula);
                 object value = cell.Value;
+
+                cell.Calculate();
+
+                object recalculated = cell.Value;
 
                 if (!Equals(value, recalculated))
                 {
                     Console.WriteLine(
-                        $"不一致: {cell.Address}  value={value}  calc={recalculated}");
+                        $"不一致: {cell.Address} value={value} calc={recalculated}");
+                    found = true;
                 }
             }
 
             Marshal.ReleaseComObject(cell);
+        }
+
+        if (!found)
+        {
+            Console.WriteLine("不一致は検出されませんでした");
         }
 
         Marshal.ReleaseComObject(range);
@@ -45,7 +58,5 @@ class Program
         Marshal.ReleaseComObject(wb);
         app.Quit();
         Marshal.ReleaseComObject(app);
-
-        Console.WriteLine("検証完了");
     }
 }

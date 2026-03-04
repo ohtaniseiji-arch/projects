@@ -1,23 +1,58 @@
 {
   "version": "0.2.0",
+  "inputs": [
+    {
+      "id": "crate",
+      "type": "promptString",
+      "description": "crate名（例: ch02_guessing_game）",
+      "default": "ch02_guessing_game"
+    },
+    {
+      "id": "bin",
+      "type": "promptString",
+      "description": "bin名（例: read_user_input）※ src/bin/<bin>.rs を作った時だけ",
+      "default": "read_user_input"
+    }
+  ],
   "configurations": [
     {
-      "name": "Rust: Debug Run",
+      "name": "Rust: Debug (Pick crate - main)",
       "type": "lldb",
       "request": "launch",
       "cargo": {
         "args": [
-          "build"
-        ],
-        "filter": {
-          "name": "projects",
-          "kind": "bin"
-        }
+          "build",
+          "-p",
+          "${input:crate}"
+        ]
       },
-      "args": [],
       "cwd": "${workspaceFolder}",
       "console": "integratedTerminal",
-      "sourceLanguages": ["rust"],
+      "sourceLanguages": [
+        "rust"
+      ],
+      "initCommands": [
+        "settings set target.process.thread.step-avoid-regexp ^<?(std|core|alloc)::"
+      ]
+    },
+    {
+      "name": "Rust: Debug (Pick crate + bin)",
+      "type": "lldb",
+      "request": "launch",
+      "cargo": {
+        "args": [
+          "build",
+          "-p",
+          "${input:crate}",
+          "--bin",
+          "${input:bin}"
+        ]
+      },
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "sourceLanguages": [
+        "rust"
+      ],
       "initCommands": [
         "settings set target.process.thread.step-avoid-regexp ^<?(std|core|alloc)::"
       ]

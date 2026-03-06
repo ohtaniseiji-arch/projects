@@ -5,7 +5,7 @@
       "id": "crate",
       "type": "promptString",
       "description": "crate名（例: ch02_guessing_game）",
-      "default": "ch02_guessing_game"
+      "default": "ch03_common"
     },
     {
       "id": "bin",

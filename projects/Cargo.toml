@@ -1,7 +1,3 @@
 [workspace]
-members = [
-  "ch01_hello",
-  "ch02_guessing_game",
-  # "ch03_common",
-]
+members = ["ch01_hello", "ch02_guessing_game", "ch03_common"]
 resolver = "2"

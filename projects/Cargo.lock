@@ -9,3 +9,7 @@ version = "0.1.0"
 [[package]]
 name = "ch02_guessing_game"
 version = "0.1.0"
+
+[[package]]
+name = "ch03_common"
+version = "0.1.0"

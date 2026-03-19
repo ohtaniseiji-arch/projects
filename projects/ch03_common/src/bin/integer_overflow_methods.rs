@@ -1,8 +1,8 @@
 fn main() {
-    let a: u8 = 255;
-    let b: u8 = 1;
+    let a: u8 = 200;
+    let b: u8 = 10;
 
-    // checked_*: オーバーフロー時は None
+    // checked_*: 正常時は Some(結果)
     let checked = a.checked_add(b);
     println!("checked_add: {:?}", checked);
 

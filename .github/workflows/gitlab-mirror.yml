@@ -30,4 +30,5 @@ jobs:
       - name: Mirror push
         run: |
           git remote add gitlab "${{ secrets.GITLAB_REPO_SSH }}"
-          git push --mirror gitlab
+          git push --prune gitlab "refs/heads/*:refs/heads/*"
+          git push --prune gitlab "refs/tags/*:refs/tags/*"

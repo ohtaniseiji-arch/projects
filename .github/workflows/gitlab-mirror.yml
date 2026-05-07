@@ -1,0 +1,27 @@
+name: Mirror push to GitLab
+
+on:
+  push:
+    branches:
+      - "**"
+    tags:
+      - "**"
+
+permissions:
+  contents: read
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (full history)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Mirror push
+        run: |
+          git remote remove gitlab 2>/dev/null || true
+          git remote add gitlab "${{ secrets.GITLAB_REPO_SSH }}"
+          git push --prune gitlab "refs/heads/*:refs/heads/*"
+          git push --prune gitlab "refs/tags/*:refs/tags/*"
